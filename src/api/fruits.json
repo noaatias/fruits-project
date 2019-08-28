@@ -1,0 +1,38 @@
+[{
+    "FruitName":"red apple",
+    "UrlToWiki":"https://he.wikipedia.org/wiki/%D7%AA%D7%A4%D7%95%D7%97",
+    "Img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Fuji_apple.jpg/800px-Fuji_apple.jpg",
+    "Overview":{
+        "Origin":"japan",
+        "Genus":"Malus",
+        "YearOfDevelopment":1937
+    },
+    "Nutrition":{
+        "Calories":125,
+        "Sugar":30,
+        "DietaryFiber":4.9,
+        "Protein":0.6
+    },
+    "isFavorite":false,
+    "editMode":false
+
+},
+{
+    "FruitName":"pineapple",
+    "UrlToWiki":"https://en.wikipedia.org/wiki/Pineapple",
+    "Img":"https://cdn.shopify.com/s/files/1/2971/2126/products/Pineapple_3a0e62bf-0fc4-428b-b501-649e738c3fcc_800x.jpg?v=1530475611",
+    "Overview":{
+        "Origin":"Brazil",
+        "Genus":"Comusus",
+        "YearOfDevelopment":1917
+    },
+    "Nutrition":{
+        "Calories":333,
+        "Sugar":55,
+        "DietaryFiber":5.9,
+        "Protein":0.3
+    },
+    "isFavorite":false,
+    "editMode":false
+
+}]
