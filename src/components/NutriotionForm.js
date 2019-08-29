@@ -1,5 +1,4 @@
-import React, {Fragment, useState} from "react";
-import {Button, Modal} from "react-bootstrap";
+import React, {useState} from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
@@ -16,58 +15,50 @@ import {
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {addFruit} from "../actions/fruit";
-const NutriotionForm = ({addFruit,fruit}) => {
-  console.log(fruit.fruit)
+const NutriotionForm = ({addFruit, fruit}) => {
   const [formData, setFormData] = useState({
     Calories: fruit.fruit.Nutrition.Calories,
     Sugar: fruit.fruit.Nutrition.Sugar,
     DietaryFiber: fruit.fruit.Nutrition.DietaryFiber,
-    Protein:fruit.fruit.Nutrition.Protein ,
+    Protein: fruit.fruit.Nutrition.Protein
   });
   const [displayModal, toggleModal] = useState(false);
 
-  var name ;
+  var name;
   var value;
-var i=0;
-  const onChange = e =>{
-    console.log(e.target)
-    if(e.target.name=='key'){
-      name=(e.target.value)
-
+  const onChange = e => {
+    if (e.target.name == "key") {
+      name = e.target.value;
+    } else {
+      value = e.target.value;
     }
-    else{
-      value=(e.target.value)
+  };
 
-    }
-
-  }
-
-  const onSubmit =  e => {
-    console.log(name,value)
+  const onSubmit = e => {
     var newFruit;
     e.preventDefault();
-    console.log(e.target.input)
-    console.log(formData,name)
-newFruit=fruit.fruit;
-newFruit.Nutrition=formData
-    setFormData( formData[name]= value);
-i=0;
-    console.log(formData)
-      toggleModal(!displayModal);
-      addFruit(newFruit);
-     
-       name =[];
 
-    }
-  
+    newFruit = fruit.fruit;
+    newFruit.Nutrition = formData;
+    setFormData((formData[name] = value));
+
+    console.log(formData);
+    toggleModal(!displayModal);
+    addFruit(newFruit);
+  };
 
   return (
     <>
-      <button className="btn btn-success btn-sm" onClick={e => toggleModal(!displayModal)}>+</button>
+      <button
+        className="btn btn-success btn-sm"
+        onClick={e => toggleModal(!displayModal)}
+      >
+        +
+      </button>
       {displayModal && (
         <MDBModal isOpen={true}>
           <MDBModalHeader toggle={() => toggleModal(!displayModal)}>
-            +
+            Add nutriotion
           </MDBModalHeader>
           <form onSubmit={e => onSubmit(e)}>
             <MDBModalBody>
@@ -87,7 +78,6 @@ i=0;
                     />
                   </MDBCol>
                 </MDBRow>
-                
               </div>
             </MDBModalBody>
             <MDBModalFooter>
@@ -108,13 +98,15 @@ i=0;
   );
 };
 
-NutriotionForm.propTypes={
-  addFruit:PropTypes.func.isRequired,
-  fruit:PropTypes.object.isRequired
-  }
-  const mapStateToProps=state=>({
-      fruit:state.fruit, 
-      addFruit:state.addFruit
-
-  })
-  export default connect(mapStateToProps,{addFruit})(NutriotionForm);
+NutriotionForm.propTypes = {
+  addFruit: PropTypes.func.isRequired,
+  fruit: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  fruit: state.fruit,
+  addFruit: state.addFruit
+});
+export default connect(
+  mapStateToProps,
+  {addFruit}
+)(NutriotionForm);

@@ -1,8 +1,7 @@
 import React, {Fragment, useEffect} from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {Link} from "react-router-dom";
-import {Button, Card} from "react-bootstrap";
+import {Card} from "react-bootstrap";
 import "./FruitDetails.css";
 import NutriotionForm from "./NutriotionForm";
 import {
@@ -19,12 +18,10 @@ const FruitDetails = ({
   addFavorite,
   removeFavorite
 }) => {
-  function deleteNutrition(one) {
-    delete fruit.fruit.Nutrition[one];
+  function deleteNutrition(oneNutrition) {
+    delete fruit.fruit.Nutrition[oneNutrition];
     getFruits();
   }
-  var newbuuton;
-  console.log(fruit);
   return (
     <Card>
       {fruit.fruit && fruit.fruit.Overview ? (
@@ -32,7 +29,7 @@ const FruitDetails = ({
           <img src={fruit.fruit.Img} style={{width: "auto", height: "16rem"}} />
 
           <div className="text">
-            <h1 className="name">Name:{fruit.fruit.FruitName} </h1>
+            <h1 className="name">{fruit.fruit.FruitName} </h1>
 
             <button
               className={
@@ -41,7 +38,6 @@ const FruitDetails = ({
                   : "btn btn-outline-dark  far fa-star fa-2x"
               }
               onClick={e => {
-                console.log(fruit.fruit.isFavorite);
                 if (fruit.fruit.isFavorite) {
                   removeFavorite(fruit.fruit);
                   fruit.fruit.isFavorite = false;
@@ -49,17 +45,17 @@ const FruitDetails = ({
                   fruit.fruit.isFavorite = true;
                   addFavorite(fruit.fruit);
                 }
-                console.log(fruit.fruit.Overview.Origin);
               }}
             ></button>
 
-            <a href={fruit.fruit.UrlToWiki}><button className="btn btn-primary">to wiki</button></a>
+            <a href={fruit.fruit.UrlToWiki}>
+              <button className="btn btn-primary">to wiki</button>
+            </a>
           </div>
 
           <div className="all">
             <table className="nutritionTable">
-              <h1>Overview:</h1>
-
+              Overview:
               <tr>
                 <td> Origin:</td>
                 <td>{fruit.fruit.Overview.Origin}</td>

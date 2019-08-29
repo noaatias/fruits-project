@@ -35,4 +35,81 @@
     "isFavorite":false,
     "editMode":false
 
-}]
+},
+{
+    "FruitName":"watermelon",
+    "UrlToWiki":"https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%98%D7%99%D7%97",
+    "Img":"https://cdn.shopify.com/s/files/1/0064/9776/3410/products/ccd39ae656d4e62b6cf5c70553ac4551_300x300.jpg?v=1559206854",
+    "Overview":{
+        "Origin":"West Africa",
+        "Genus":"Citrullus lanatus",
+        "YearOfDevelopment":1917
+    },
+    "Nutrition":{
+        "Calories":76,
+        "Sugar":333,
+        "DietaryFiber":8.9,
+        "Protein":7.3
+    },
+    "isFavorite":false,
+    "editMode":false
+
+},
+{
+    "FruitName":"mango",
+    "UrlToWiki":"https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%92%D7%95",
+    "Img":"https://befreshcorp.net/wp-content/uploads/2017/07/product-packshot-mango-558x600.jpg",
+    "Overview":{
+        "Origin":"india china",
+        "Genus":"Mangifera indica",
+        "YearOfDevelopment":1917
+    },
+    "Nutrition":{
+        "Calories":36,
+        "Sugar":33,
+        "DietaryFiber":2.9,
+        "Protein":3.3
+    },
+    "isFavorite":false,
+    "editMode":false
+
+},
+{
+    "FruitName":"Grape",
+    "UrlToWiki":"https://en.wikipedia.org/wiki/Grape",
+    "Img":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Table_grapes_on_white.jpg/1280px-Table_grapes_on_white.jpg",
+    "Overview":{
+        "Origin":"georgia",
+        "Genus":"Vitis",
+        "YearOfDevelopment":1917
+    },
+    "Nutrition":{
+        "Calories":76,
+        "Sugar":333,
+        "DietaryFiber":8.9,
+        "Protein":7.3
+    },
+    "isFavorite":false,
+    "editMode":false
+
+},
+{
+    "FruitName":"peach",
+    "UrlToWiki":"https://he.wikipedia.org/wiki/%D7%90%D7%A4%D7%A8%D7%A1%D7%A7",
+    "Img":"https://cdn.babamail.co.il/Images/2015/9/9/3dc66b46-33f1-48f0-b579-351b7351a95b.jpg",
+    "Overview":{
+        "Origin":"china",
+        "Genus":"Prunus persica",
+        "YearOfDevelopment":1917
+    },
+    "Nutrition":{
+        "Calories":76,
+        "Sugar":333,
+        "DietaryFiber":8.9,
+        "Protein":7.3
+    },
+    "isFavorite":false,
+    "editMode":false
+
+}
+]

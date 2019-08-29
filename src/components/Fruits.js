@@ -2,8 +2,7 @@ import React, {Fragment, useEffect} from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {getFruits, getFruitData} from "../actions/fruit";
-import {Link, Redirect} from "react-router-dom";
-import FruitDetails from "./FruitDetails";
+import {Link} from "react-router-dom";
 import "./FruitDetails.css";
 
 const Fruits = ({
@@ -15,7 +14,6 @@ const Fruits = ({
   useEffect(() => {
     getFruits();
   }, [getFruits]);
-  console.log(favorites);
   return (
     <div className="card">
       {fruits.map(fruit => (
