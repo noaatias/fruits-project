@@ -4,6 +4,8 @@ import {connect} from "react-redux";
 import {Card} from "react-bootstrap";
 import "./FruitDetails.css";
 import NutriotionForm from "./NutriotionForm";
+import {Link} from "react-router-dom";
+
 import {
   getFruitData,
   getFruits,
@@ -23,54 +25,65 @@ const FruitDetails = ({
     getFruits();
   }
   return (
-    <Card>
+    <div className="total">
+      
+        
+        <Link  className="back" to="/">
+          <i /> &lt; Back
+        </Link>
+      
+      <h1 className="info">Fruit Info</h1>
       {fruit.fruit && fruit.fruit.Overview ? (
-        <div>
-          <img src={fruit.fruit.Img} style={{width: "auto", height: "16rem"}} />
+        <>
+          <div class="flex-container">
+            <img className="fruitImg" src={fruit.fruit.Img} />
 
-          <div className="text">
-            <h1 className="name">{fruit.fruit.FruitName} </h1>
+            <div >
+              <div>Fruit name:</div>
+              <h2 className="name">
+                {fruit.fruit.FruitName}
 
-            <button
-              className={
-                fruit.fruit.isFavorite
-                  ? "btn btn-outline-warning fas fa-star fa-2x "
-                  : "btn btn-outline-dark  far fa-star fa-2x"
-              }
-              onClick={e => {
-                if (fruit.fruit.isFavorite) {
-                  removeFavorite(fruit.fruit);
-                  fruit.fruit.isFavorite = false;
-                } else {
-                  fruit.fruit.isFavorite = true;
-                  addFavorite(fruit.fruit);
-                }
-              }}
-            ></button>
+                <i
+                  className={
+                    fruit.fruit.isFavorite
+                      ? " fas fa-star favorite"
+                      : " far fa-star favorite"
+                  }
+                  onClick={e => {
+                    if (fruit.fruit.isFavorite) {
+                      removeFavorite(fruit.fruit);
+                      fruit.fruit.isFavorite = false;
+                    } else {
+                      fruit.fruit.isFavorite = true;
+                      addFavorite(fruit.fruit);
+                    }
+                  }}
+                ></i>
+              </h2>
 
-            <a href={fruit.fruit.UrlToWiki}>
-              <button className="btn btn-primary">to wiki</button>
-            </a>
+              <a href={fruit.fruit.UrlToWiki}>
+                <button className="wiki">Show in wiki</button>
+              </a>
+            </div>
           </div>
+          <p>Overview:</p>
+          <div className="wrapTable">
+            <div class="Rtable Rtable--2cols">
+              <div class="Rtable-cell">Origin:</div>
+              <div class="Rtable-cell">{fruit.fruit.Overview.Origin}</div>
 
-          <div className="all">
-            <table className="nutritionTable">
-              Overview:
-              <tr>
-                <td> Origin:</td>
-                <td>{fruit.fruit.Overview.Origin}</td>
-              </tr>
-              <tr>
-                <td> Genus:</td>
-                <td>{fruit.fruit.Overview.Genus}</td>
-              </tr>
-              <tr>
-                <td> year of development:</td>
-                <td>{fruit.fruit.Overview.YearOfDevelopment}</td>
-              </tr>
-            </table>
-            <div>
-              Nutrition:
+              <div class="Rtable-cell">Genus:</div>
+              <div class="Rtable-cell">{fruit.fruit.Overview.Genus}</div>
+
+              <div class="Rtable-cell">year of development:</div>
+              <div class="Rtable-cell">
+                {fruit.fruit.Overview.YearOfDevelopment}
+              </div>
+            </div>
+          </div>
+          <div >
+            <p className="title2">
+              Nutrition:{" "}
               <button
                 className="btn btn-primary btn-sm"
                 onClick={e => {
@@ -87,33 +100,36 @@ const FruitDetails = ({
                   fruitNut={fruit.fruit.Nutrition}
                 ></NutriotionForm>
               ) : null}
-            </div>
-            <table className="nutritionTable">
-              {Object.keys(fruit.fruit.Nutrition).map((one, i) => (
-                <tr>
-                  <td> {Object.keys(fruit.fruit.Nutrition)[i]}:</td>
-                  <td>{fruit.fruit.Nutrition[one]}</td>
+            </p>
+            <div className="wrapTable">
+              <div class="Rtable Rtable--2cols">
+                {Object.keys(fruit.fruit.Nutrition).map((one, i) => (
+                  <>
+                    <div class="Rtable-cell">
+                      {Object.keys(fruit.fruit.Nutrition)[i]}:
+                    </div>
+                    <div class="Rtable-cell">
+                      {fruit.fruit.Nutrition[one]}
+                      {fruit.fruit.editMode ? (
+                        <>
+                          <i
+                            className="fas fa-minus-circle delete"
+                            onClick={e => deleteNutrition(one)}
+                          ></i>
+                        </>
+                      ) : null}
+                    </div>
+                  </>
 
-                  {fruit.fruit.editMode ? (
-                    <td>
-                      {" "}
-                      <button
-                        className="btn btn-danger btn-sm"
-                        onClick={e => deleteNutrition(one)}
-                      >
-                        x
-                      </button>
-                    </td>
-                  ) : null}
-                </tr>
-              ))}
-            </table>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        </>
       ) : (
         <div>choose fruit</div>
       )}
-    </Card>
+    </div>
   );
 };
 FruitDetails.propTypes = {

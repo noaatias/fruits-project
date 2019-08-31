@@ -1,18 +1,5 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  padding: 8px;
-  background-color: #dddddd;
+.menu {
+  margin-left: 400px;
 }
 
 .navbar {
@@ -23,10 +10,12 @@ li a {
 .title {
   font-size: 20px;
   color: white;
-  padding: 10px;
+  margin-left: 400px;
+
 }
 
 .favorites {
   font-size: 20px;
-  color: white
+  color: white;
+  padding: 10px
 }

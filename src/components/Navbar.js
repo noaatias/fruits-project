@@ -6,15 +6,14 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="all">
       <nav className="navbar ">
         <h1>
           <Link to="/" className="title">
-            <i className="title" /> all the fruits
+            <i  /> All the fruits
           </Link>
-
           <Link to="/favorites" className="favorites">
-            <i className="favorites" /> favorites
+            <i  /> Favorites
           </Link>
         </h1>
       </nav>

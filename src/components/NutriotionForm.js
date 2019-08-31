@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
+import "./FruitDetails.css";
+
 import {
   MDBBtn,
   MDBCol,
@@ -49,12 +51,12 @@ const NutriotionForm = ({addFruit, fruit}) => {
 
   return (
     <>
-      <button
-        className="btn btn-success btn-sm"
+      <i
+        className="fas fa-plus-circle add"
         onClick={e => toggleModal(!displayModal)}
       >
-        +
-      </button>
+        
+      </i>
       {displayModal && (
         <MDBModal isOpen={true}>
           <MDBModalHeader toggle={() => toggleModal(!displayModal)}>

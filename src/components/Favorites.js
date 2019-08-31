@@ -3,31 +3,34 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {getFruitData} from "../actions/fruit";
 import {Link} from "react-router-dom";
+import "./FruitDetails.css";
 
 const Favorites = ({favorites}) => {
   return (
-    <div className="card">
+    <div className="allFruit">
+    <div className="Rtable Rtable--1cols">
+    {favorites==[]?(<div>There is no favorites</div>):(null)}
       {favorites.map(fruit => (
-        <div className="oneFruit">
-          <Link
-            to={{
-              pathname: "/FruitDetails",
-              state: {
-                fruit: fruit
-              }
-            }}
-          >
-            <button
-              className="list"
-              onClick={e => {
-                getFruitData(fruit);
-              }}
-            >
-              {fruit.FruitName}
-            </button>
-          </Link>
-        </div>
+          <Link className="Rtable-cell oneFruit" onClick={e => {
+            getFruitData(fruit);
+            
+          }}
+          to={{
+            pathname: "/FruitDetails",
+            state: {
+              fruit: fruit
+            }
+          }}
+        > 
+      
+    
+
+    {fruit.FruitName} <p className="arrow">></p>
+   
+       
+        </Link>
       ))}
+      </div>
     </div>
   );
 };

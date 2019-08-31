@@ -1,6 +1,117 @@
-.card {
+.total {
     margin: 10px;
-    width: 500px;
+    width: 1400px;
+    padding-left: 400px
+}
+
+.back {
+    width: 80px;
+    padding: 4px;
+    border-radius: 26px;
+    color: blue;
+    border: solid 1px silver
+}
+
+.info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.fruitImg {
+    display: block;
+    border: solid 1px silver;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+
+}
+
+.favorite {
+    color: yellow
+}
+
+.wiki {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: solid 1px;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 5px
+}
+
+
+.Rtable {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 3em 0;
+    padding: 0;
+
+
+}
+
+.wrapTable {
+    border: 1pt solid silver;
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.Rtable-cell {
+    height: 55px;
+
+    box-sizing: border-box;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+    list-style: none;
+    border-bottom: 1pt solid silver;
+    background: fade(slategrey, 20%);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.title2 {
+    width: 50%
+}
+
+.delete {
+    float: right;
+    color: red;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+
+}
+
+.allFruit {
+    width: 50%;
+    margin-left: 400px;
+    margin-top: 50px;
+    border: solid 1px silver;
+    cursor: pointer;
+
+}
+
+.arrow {
+    float: right
+}
+
+.oneFruit {
+
+    width: 100%;
+    margin: 10px;
+    border-bottom: solid 1px silver;
+    text-align: initial;
+    color: black;
+
 }
 
 h1 {
@@ -12,36 +123,40 @@ h1 {
 
 }
 
-td {
-    width: 668px
+.add {
+    float: right;
+    color: green;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    padding-top: 15px;
+    padding-right: 40px
 }
 
-.list {
-    width: 100%;
-    background-color: Transparent;
-    background-repeat: no-repeat;
+li>a {
+    background-color: white;
     color: black
 }
 
-.oneFruit {
-    width: 100%
-}
 
-.card {
 
-    width: auto;
-    padding: 10px;
-    margin-top: 10px;
-}
 
-img {
-    display: block;
-
+.Rtable--2cols>.Rtable-cell {
     width: 50%;
 }
 
-.yellow {
-    background-color: Transparent;
-    border: none;
+.Rtable--3cols>.Rtable-cell {
+    width: 33.33%;
+}
 
+.Rtable--4cols>.Rtable-cell {
+    width: 25%;
+}
+
+.Rtable--5cols>.Rtable-cell {
+    width: 20%;
+}
+
+.Rtable--6cols>.Rtable-cell {
+    width: 16.6%;
 }

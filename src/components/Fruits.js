@@ -8,17 +8,22 @@ import "./FruitDetails.css";
 const Fruits = ({
   getFruits,
   getFruitData,
-  favorites,
-  fruit: {fruits, loading}
+  
+  fruit: {fruits}
 }) => {
   useEffect(() => {
     getFruits();
   }, [getFruits]);
+
   return (
-    <div className="card">
-      {fruits.map(fruit => (
-        <div className="oneFruit">
+    <div className="allFruit">
+      <div className="Rtable Rtable--1cols">
+        {fruits.map(fruit => (
           <Link
+            className="Rtable-cell oneFruit"
+            onClick={e => {
+              getFruitData(fruit);
+            }}
             to={{
               pathname: "/FruitDetails",
               state: {
@@ -26,17 +31,10 @@ const Fruits = ({
               }
             }}
           >
-            <button
-              className="list"
-              onClick={e => {
-                getFruitData(fruit);
-              }}
-            >
-              {fruit.FruitName}
-            </button>
+            {fruit.FruitName} <p className="arrow">></p>
           </Link>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
